@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800 text-white antialiased;
+  margin: 0;
+  padding: 0;
+}
