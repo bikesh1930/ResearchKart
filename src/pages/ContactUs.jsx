@@ -47,6 +47,7 @@ function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -61,6 +62,9 @@ function ContactForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email)) {
       newErrors.email = "Please enter a valid email address.";
+    }
+    if (!formData.phone.trim() || formData.phone.length < 10) {
+      newErrors.phone = "Please enter a valid contact number.";
     }
     if (!formData.subject.trim()) {
       newErrors.subject = "Subject is required.";
@@ -86,7 +90,7 @@ function ContactForm() {
           timestamp: serverTimestamp(),
         });
         setSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
         setTimeout(() => setSubmitted(false), 4000);
       } catch (err) {
         console.error("Error saving message:", err);
@@ -141,6 +145,23 @@ function ContactForm() {
             }`}
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+        </div>
+
+        {/* Contact Number */}
+        <div>
+          <label className="block text-sm font-semibold text-gray-700">Contact Number</label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className={`mt-2 w-full rounded-lg border px-4 py-2 text-sm text-gray-800 focus:ring-2 ${
+              errors.phone
+                ? "border-red-500 focus:ring-red-200"
+                : "border-gray-300 focus:border-orange-500 focus:ring-orange-200"
+            }`}
+          />
+          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
         </div>
 
         {/* Subject */}
@@ -204,23 +225,7 @@ function ContactInfo() {
   return (
     <section className="relative mx-auto max-w-6xl px-6 py-16">
       <motion.div className="grid gap-8 md:grid-cols-3" {...fadeUp(0.2)}>
-        {/* <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <Mail className="mb-2 h-6 w-6 text-orange-600" />
-          <h4 className="font-semibold text-gray-900">Email</h4>
-          <p className="mt-1 text-sm text-gray-700">hello@researchkart.in</p>
-        </div> */}
-        {/* <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <Phone className="mb-2 h-6 w-6 text-orange-600" />
-          <h4 className="font-semibold text-gray-900">Phone</h4>
-          <p className="mt-1 text-sm text-gray-700">+91 98765 43210</p>
-        </div>
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <MapPin className="mb-2 h-6 w-6 text-orange-600" />
-          <h4 className="font-semibold text-gray-900">Address</h4>
-          <p className="mt-1 text-sm text-gray-700">
-            123 Knowledge Park, Research City, India
-          </p>
-        </div> */}
+        {/* Contact blocks (optional) */}
       </motion.div>
     </section>
   );
