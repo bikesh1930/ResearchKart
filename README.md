@@ -107,6 +107,10 @@ All support is mentorship-based, transparent, and aligned with academic integrit
 ## 🌐 Live Demo
 👉 [Insert your website link here]  
 
+
+
+<!-- now final commit before the website deploy through Hostinger (29th Aug 2025 - Friday) -->
+
 ---
 
 ## 🤝 Contribution
