@@ -417,9 +417,9 @@ function ServiceCard({ icon: Icon, title, bullets, idx }) {
         ))}
       </ul>
 
-      <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-700">
+      {/* <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-700">
         Learn more <ChevronRight className="h-4 w-4" />
-      </div>
+      </div> */}
     </motion.div>
   );
 }

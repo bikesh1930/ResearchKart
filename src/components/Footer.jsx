@@ -61,8 +61,8 @@ export default function Footer() {
           <ul className="mt-3 space-y-2 text-sm">
             <li className="flex items-center gap-2 text-gray-600"><MapPin size={16} /> India</li>
             
-            <li className="flex items-center gap-2 text-gray-600"><Mail size={16} /> contact@researchkart.in</li>
             <li className="flex items-center gap-2 text-gray-600"><Mail size={16} /> hello@researchkart.in</li>
+            <li className="flex items-center gap-2 text-gray-600"><Mail size={16} /> officialresearchkart@gmail.com </li>
             <li className="flex items-center gap-2 text-gray-600"><Phone size={16} /> +91 1135629155 (Telephone)</li>
             <li className="flex items-center gap-2 text-gray-600"><Phone size={16} /> +91 9296564604 (Mobile)</li>
           </ul>
